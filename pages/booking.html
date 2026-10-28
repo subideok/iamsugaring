@@ -396,7 +396,7 @@ class Component extends DCLogic {
     const row = marqueeItems.concat(marqueeItems).map((t, i) => React.createElement('span', { key: i, style: { display: 'inline-flex', alignItems: 'center', gap: 40, paddingRight: 40, fontSize: 15, letterSpacing: '0.04em', whiteSpace: 'nowrap' } }, t, React.createElement('span', { style: { color: '#D9A35E' } }, '●')));
     const marquee = React.createElement('div', { style: { display: 'flex', width: 'max-content', animation: 'ism-marquee 40s linear infinite' } }, row);
 
-    const courseDefs = [{ k: 110, label: 'Basic 110만' }, { k: 250, label: 'Professional 250만' }, { k: 140, label: 'Master 140만' }];
+    const courseDefs = [{ k: 110, label: 'Basic' }, { k: 250, label: 'Professional' }, { k: 140, label: 'Master' }];
     const faqData = [
       ['미용 경험이 전혀 없는 생초보도 마스터하고 창업할 수 있나요?', '네, 가능합니다. 수강생의 80% 이상이 미용을 접해보지 않은 비전공자입니다. 이론부터 테크닉까지 1:1 밀착교육으로 진행되며, 미용에 전혀 관련 없던 분들도 똥손도 금손으로 만들어드리는 체계적인 커리큘럼이 준비되어 있으니 열정만 가지고 오시면 됩니다.'],
       ['전체 수강 기간 및 주당 교육 횟수는 보통 어떻게 구성되나요?', '수업에 따라 다르니 커리큘럼을 참고해주세요. 직장인 및 지방거주자를 위해 프로그램 조율이 가능합니다.'],
@@ -478,9 +478,9 @@ class Component extends DCLogic {
         { k: '현재', v: '킹덤왁싱 대표 · 아이엠슈가링 교육원장' },
       ],
       goals: dl([
-        { tag: '취미 · 입문', title: '하루 만에 슈가링 기초를', desc: '슈가링 이론과 페이스트 이해, 실습까지 원데이로 익힙니다.', course: 'Basic · 1일 6시간', price: '110만원' },
-        { tag: '창업', title: '샵 오픈까지 준비하는', desc: '전 부위 실전 테크닉과 고객 관리, 창업 준비와 마케팅까지 다룹니다.', course: 'Professional · 4일 16시간', price: '250만원' },
-        { tag: '현직자 스킬업', title: '배웠는데 안 되는 부분을', desc: '속도 시술, 부위별 시술법 교정, 부족한 부분을 집중 교육합니다.', course: 'Master · 1–2일 8시간', price: '140만원' },
+        { tag: '취미 · 입문', title: '하루 만에 슈가링 기초를', desc: '슈가링 이론과 페이스트 이해, 실습까지 원데이로 익힙니다.', course: 'Basic · 1일 6시간', price: '상담' },
+        { tag: '창업', title: '샵 오픈까지 준비하는', desc: '전 부위 실전 테크닉과 고객 관리, 창업 준비와 마케팅까지 다룹니다.', course: 'Professional · 4일 16시간', price: '상담' },
+        { tag: '현직자 스킬업', title: '배웠는데 안 되는 부분을', desc: '속도 시술, 부위별 시술법 교정, 부족한 부분을 집중 교육합니다.', course: 'Master · 1–2일 8시간', price: '상담' },
       ], 120),
       homeVideos: dl([{ src: 'https://subideok.github.io/iamsugaring/menu/wax-05.mp4', poster: 'https://subideok.github.io/iamsugaring/menu/dir-a.jpg', speed: '0.08' }, { src: 'https://subideok.github.io/iamsugaring/menu/wax-06.mp4', poster: 'https://subideok.github.io/iamsugaring/menu/dir-b.jpg', speed: '-0.08' }, { src: 'https://subideok.github.io/iamsugaring/menu/wax-02.mp4', poster: 'https://subideok.github.io/iamsugaring/menu/class-c.jpg', speed: '0.08' }], 180),
       reviews,
@@ -550,7 +550,7 @@ class Component extends DCLogic {
       spacePhotos: dl([photo('class-b', '1:1 실습 교정'), photo('class-e', '실전 모델 실습'), photo('class-c', '수업 현장')], 120),
       marketPoints: dl([
         { k: 'HIGH TICKET', num: '13', unit: '만원', t: '높은 객단가', d1: '남자 브라질리언 1회 기준.', d2: '일반 왁싱보다 높게 책정됩니다.' },
-        { k: 'REPEAT', num: '8', unit: '회/년', t: '정기적인 재방문', d1: '1.5개월마다 돌아오는 주기.', d2: '고객 한 명이 1년에 8번 찾습니다.' },
+        { k: 'REPEAT', num: '10', unit: '회/년', t: '정기적인 재방문', d1: '약 한달마다 돌아오는 주기.', d2: '고객 한 명이 1년에 10번 찾습니다.' },
         { k: 'LOYALTY', num: '7', unit: '년+', t: '떠나지 않는 단골', d1: '킹덤왁싱 실제 후기 중', d2: '7년째 다니는 고객도 있습니다.' },
       ], 120),
       diffs: dl([
@@ -570,20 +570,20 @@ class Component extends DCLogic {
         { n: '04', t: '기존 하드 왁싱샵 원장', d: '프리미엄 천연 슈가링으로 전환해 차별화와 재방문율을 높이려는 분' },
       ], 100),
       courses: dl([
-        { ...light, name: 'Basic', ko: '원데이', dur: '1일 · 6시간', price: '110만원', items: [{ t: '슈가링 이론', d: '정방향 제모의 원리' }, { t: '슈가 페이스트 이해', d: '온도와 질감 다루기' }, { t: '슈가링 테크닉', d: '실습 포함' }] },
-        { ...dark, name: 'Professional', ko: '창업반', dur: '4일 · 16시간', price: '250만원', items: [{ t: '맞춤형 피부 진단 및 실전 상담 매뉴얼', d: '슈가링 이론 · 피부학 · 모발의 이해' }, { t: '실전 스피드 핸들링 테크닉', d: '다리 · 브라질리언 · 겨드랑이 · 얼굴' }, { t: '재방문을 만드는 응대·사후 관리', d: '고객관리 및 부작용에 대한 전반적 이해' }, { t: '+ 창업 준비', d: '웰컴 기프트 · 재료 구매처 · 인테리어 상담 · 고객 상담표 · 수료 후 피드백 · 고객 응대와 마케팅' }] },
-        { ...light, name: 'Master', ko: '스킬업', dur: '1–2일 · 8시간', price: '140만원', items: [{ t: '고급 테크닉 실습 · 속도 시술', d: '시술 시간은 줄이고 자극은 최소화' }, { t: '부위별 시술방법 교정', d: '피부 및 시술 부위별' }, { t: '부족한 부분 집중 교육', d: '완벽 업그레이드' }, { t: '현장 대응법', d: '실제 샵에서 생기는 변수' }] },
+        { ...light, name: 'Basic', ko: '원데이', dur: '1일 · 6시간', price: '상담', items: [{ t: '슈가링 이론', d: '정방향 제모의 원리' }, { t: '슈가 페이스트 이해', d: '온도와 질감 다루기' }, { t: '슈가링 테크닉', d: '실습 포함' }] },
+        { ...dark, name: 'Professional', ko: '창업반', dur: '4일 · 16시간', price: '상담', items: [{ t: '맞춤형 피부 진단 및 실전 상담 매뉴얼', d: '슈가링 이론 · 피부학 · 모발의 이해' }, { t: '실전 스피드 핸들링 테크닉', d: '다리 · 브라질리언 · 겨드랑이 · 얼굴' }, { t: '재방문을 만드는 응대·사후 관리', d: '고객관리 및 부작용에 대한 전반적 이해' }, { t: '+ 창업 준비', d: '재료 구매처 · 인테리어 상담 · 고객 상담표 · 수료 후 피드백 · 고객 응대와 마케팅' }] },
+        { ...light, name: 'Master', ko: '스킬업', dur: '1–2일 · 8시간', price: '상담', items: [{ t: '고급 테크닉 실습 · 속도 시술', d: '시술 시간은 줄이고 자극은 최소화' }, { t: '부위별 시술방법 교정', d: '피부 및 시술 부위별' }, { t: '부족한 부분 집중 교육', d: '완벽 업그레이드' }, { t: '현장 대응법', d: '실제 샵에서 생기는 변수' }] },
       ], 120),
       focusCourses: [
-        { name: '브라질리언', note: '남녀 실습 3명', price: '100만원' },
-        { name: '얼굴', note: '헤어라인 · 인중 · 눈썹 · 구렛나루 · 뒷목 포함 풀페이스 실습 2명', price: '80만원' },
-        { name: '턱수염', note: '남자 실습 2명', price: '100만원' },
+        { name: '브라질리언', note: '남녀 실습 3명', price: '상담' },
+        { name: '얼굴', note: '헤어라인 · 인중 · 눈썹 · 구렛나루 · 뒷목 포함 풀페이스 실습 2명', price: '상담' },
+        { name: '턱수염', note: '남자 실습 2명', price: '상담' },
       ],
       roiCourses: courseDefs.map((c) => ({ label: c.label, pick: () => this.setState({ roiPrice: c.k }), bg: roiPrice === c.k ? '#D9A35E' : 'transparent', fg: roiPrice === c.k ? '#231E1A' : '#FAF7F2', border: roiPrice === c.k ? '#D9A35E' : '#5A514A' })),
       roiTicket, roiTicketLabel: roiTicket + '만원',
       setTicket: (e) => this.setState({ roiTicket: Number(e.target.value) }),
       roiCount: (roiPrice / roiTicket).toFixed(1),
-      roiFormula: `${roiPrice}만원 ÷ ${roiTicket}만원 = ${(roiPrice / roiTicket).toFixed(1)}명. 그 다음 고객부터는 온전한 원장님의 수익입니다.`,
+      roiFormula: `교육비 ÷ 1회 단가 ${roiTicket}만원 기준. 그 다음 고객부터는 온전한 원장님의 수익입니다.`,
       startup: dl([
         { n: '01', t: '상권 · 점포', items: ['상권 입지 분석', '세무 · 행정 가이드'] },
         { n: '02', t: '브랜딩 · 메뉴', items: ['고단가 가격표 설계', '예약 · 고객관리 세팅'] },
@@ -599,8 +599,8 @@ class Component extends DCLogic {
       ], 80),
       faqs: faqData.map(([q, a], i) => ({ q: 'Q' + (i + 1) + '. ' + q, a, rows: faqOpen === i ? '1fr' : '0fr', rot: faqOpen === i ? 'rotate(45deg)' : 'none', toggle: () => this.setState({ faqOpen: faqOpen === i ? -1 : i }) })),
       priceSummary: [
-        { n: 'Basic · 원데이', p: '110만원' }, { n: 'Professional · 창업반', p: '250만원' }, { n: 'Master · 스킬업', p: '140만원' },
-        { n: '집중 공략 · 브라질리언', p: '100만원' }, { n: '집중 공략 · 얼굴', p: '80만원' }, { n: '집중 공략 · 턱수염', p: '100만원' },
+        { n: 'Basic · 원데이', p: '상담' }, { n: 'Professional · 창업반', p: '상담' }, { n: 'Master · 스킬업', p: '상담' },
+        { n: '집중 공략 · 브라질리언', p: '상담' }, { n: '집중 공략 · 얼굴', p: '상담' }, { n: '집중 공략 · 턱수염', p: '상담' },
       ],
       notSent: !sent, sent,
       submitForm: (e) => { e.preventDefault(); this.setState({ sent: true }); },
